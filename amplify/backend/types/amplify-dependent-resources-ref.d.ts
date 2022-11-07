@@ -10,5 +10,12 @@ export type AmplifyDependentResourcesAttributes = {
             "CloudFrontSecureURL": "string",
             "CloudFrontOriginAccessIdentity": "string"
         }
+    },
+    "api": {
+        "newdawnfallin": {
+            "GraphQLAPIKeyOutput": "string",
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
     }
 }
