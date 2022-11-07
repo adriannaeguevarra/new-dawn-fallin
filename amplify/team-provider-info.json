@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-newdawnfallin-dev-183940-authRole",
+      "UnauthRoleArn": "arn:aws:iam::466469553065:role/amplify-newdawnfallin-dev-183940-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::466469553065:role/amplify-newdawnfallin-dev-183940-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-newdawnfallin-dev-183940-deployment",
+      "UnauthRoleName": "amplify-newdawnfallin-dev-183940-unauthRole",
+      "StackName": "amplify-newdawnfallin-dev-183940",
+      "StackId": "arn:aws:cloudformation:us-west-2:466469553065:stack/amplify-newdawnfallin-dev-183940/6e8f1aa0-5e45-11ed-b4e5-0ab5a621ef25",
+      "AmplifyAppId": "d2dwn2zp19jfnh"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}
