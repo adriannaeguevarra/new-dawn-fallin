@@ -107,4 +107,4 @@ Your project has been successfully initialized and connected to the cloud!
 ---
 
 # **References for Amplify Workflow**
-[amplify workflow reference](https://janhesters.com/multiple-environments-with-aws-amplify)
+- [amplify workflow reference](https://janhesters.com/multiple-environments-with-aws-amplify)
