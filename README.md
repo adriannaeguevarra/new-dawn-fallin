@@ -104,3 +104,7 @@ Your project has been successfully initialized and connected to the cloud!
  - This project leverages the use amplify hosting and s3 storage so all we have to do is make sure the code we want to deploy is valid and then run `amplify publish`
 - **Adrianna** is in charge of this, so she should be the only one doing this
 
+---
+
+# **References for Amplify Workflow**
+[amplify workflow reference](https://janhesters.com/multiple-environments-with-aws-amplify)
