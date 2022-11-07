@@ -43,29 +43,5 @@
         "newdawnfallin": {}
       }
     }
-  },
-  "sandbox": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-newdawnfallin-sandbox-210536-authRole",
-      "UnauthRoleArn": "arn:aws:iam::466469553065:role/amplify-newdawnfallin-sandbox-210536-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::466469553065:role/amplify-newdawnfallin-sandbox-210536-authRole",
-      "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-newdawnfallin-sandbox-210536-deployment",
-      "UnauthRoleName": "amplify-newdawnfallin-sandbox-210536-unauthRole",
-      "StackName": "amplify-newdawnfallin-sandbox-210536",
-      "StackId": "arn:aws:cloudformation:us-west-2:466469553065:stack/amplify-newdawnfallin-sandbox-210536/d1255b20-5e59-11ed-b546-06815216fca5",
-      "AmplifyAppId": "d2dwn2zp19jfnh"
-    },
-    "categories": {
-      "auth": {
-        "newdawnfallinb4b2fda2": {}
-      },
-      "hosting": {
-        "S3AndCloudFront": {}
-      },
-      "api": {
-        "newdawnfallin": {}
-      }
-    }
   }
 }
