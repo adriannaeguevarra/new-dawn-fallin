@@ -8,7 +8,12 @@
 - `git checkout development`
 - `cd into directory`
 - `npm i`
-
+- Ensure the version of node installed is above 13.x. If not you will get errors. To do this run `node --version`
+- If less than 13.x. Do the following steps:
+- `npm install -g n`
+- `sudo n lts`
+- `node --version`
+- This should give you 18.12.1
 ---
 
 # **Initialize the development branch using the dev amplify backend**
