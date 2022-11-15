@@ -13,7 +13,7 @@
 - `npm install -g n`
 - `sudo n lts`
 - `node --version`
-- This should give you the latest LTS.
+- This should output the latest version of node in your terminal
 ---
 
 # **Initialize the development branch using the dev amplify backend**
