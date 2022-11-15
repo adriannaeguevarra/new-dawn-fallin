@@ -13,7 +13,7 @@
 - `npm install -g n`
 - `sudo n lts`
 - `node --version`
-- This should give you 18.12.1
+- This should give you the latest LTS.
 ---
 
 # **Initialize the development branch using the dev amplify backend**
