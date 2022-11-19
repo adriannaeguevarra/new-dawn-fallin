@@ -21,6 +21,7 @@ import {
   Button
  } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+import SwipeableTemporaryDrawer from './components/sidenav';  
 
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
