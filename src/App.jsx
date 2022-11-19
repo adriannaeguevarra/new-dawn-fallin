@@ -9,12 +9,13 @@ import './App.css'
 //   Link
 // } from "react-router-dom";
 import ButtonAppBar from './components/navbar';
-import SwipeableTemporaryDrawer from './components/sidenav';  
+import SwipeableTemporaryDrawer from './components/sidenav';
+import BasicButtons from './components/button';
+import LinearWithValueLabel from './components/progressbar';
 
 function App() {
 
   return (
-
   <div>
   </div>
 
