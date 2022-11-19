@@ -9,16 +9,13 @@ import './App.css'
 //   Link
 // } from "react-router-dom";
 import ButtonAppBar from './components/navbar';
+import SwipeableTemporaryDrawer from './components/sidenav';  
 
 function App() {
 
   return (
 
   <div>
-    <ButtonAppBar />
-    //Drawer//
-
-    //Router
   </div>
 
   )
