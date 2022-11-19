@@ -9,7 +9,6 @@ import {
   Link
 } from "react-router-dom";
 import Home from './pages/Home';
-import About from './pages/Dashboard';
 import Donate from './pages/Donate';
 import Profile from './pages/Profile';
 import Dashboard from './pages/Dashboard';
@@ -266,23 +265,24 @@ export default function App() {
     <Router>
       <nav>
         <Link to='/'> Home </Link>
-        <Link to ='/about'> About </Link>
         <Link to='/donate'> Donate </Link>
       </nav>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
         <Route path='/donate' element={<Donate />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/layout' element={<Layout />} />
-        <Route path='/settings' element={<Settings />} />
+
+        {/* <Authenticator formFields={formFields} components={components}>
+      {({ signOut }) => <button onClick={signOut}>Sign out</button>} */}
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/layout' element={<Layout />} />
+          <Route path='/settings' element={<Settings />} />
+        {/* </Authenticator> */}
 
         <Route path='*' element={<PageNotFound />} />
       </Routes>
     </Router>
-    // <Authenticator formFields={formFields} components={components}>
-    //   {({ signOut }) => <button onClick={signOut}>Sign out</button>}
-    // </Authenticator>
+    
+    
   );
 }
