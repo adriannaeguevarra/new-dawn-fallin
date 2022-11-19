@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import LightOrDarkMode from "../components/lightOrDarkMode";
 
 export default function ButtonAppBar() {
   return (
@@ -29,6 +30,7 @@ export default function ButtonAppBar() {
           <Button color="inherit">Become a Sponsor</Button>
           <Button color="inherit">About</Button>
           <Button color="inherit">Login</Button>
+          <Button color="inherit">{<LightOrDarkMode />}</Button>
         </Toolbar>
       </AppBar>
     </Box>
