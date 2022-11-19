@@ -18,9 +18,12 @@ export function Login(){
     const location = useLocation();
     const navigate = useNavigate();
     /*
-        If someone goes to a protected route,
-        remember it, and redirect them to login, 
-        and have them go to one of those protecte roues
+        If someone goes to aprotected route,
+        remember it, and check if authenticated otherwise
+         redirect them to login, 
+        
+         If authenticated,
+         go to one of those protecte routes
     */
 
     //use this state to look at the last place a user was at

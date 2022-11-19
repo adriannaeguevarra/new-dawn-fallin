@@ -46,7 +46,7 @@ export default function App() {
         <Link to='/donate'> Donate </Link>
       </nav> */}
       <Routes>
-          <Route path='/' element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path='/' element={<Home />} />
           <Route path='/donate' element={<RequireAuth><Donate /></RequireAuth>} />
           <Route path='/profile' element={<RequireAuth><Profile /></RequireAuth>} />
           <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} />
