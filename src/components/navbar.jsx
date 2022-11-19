@@ -10,8 +10,8 @@ import {useAuthenticator} from '@aws-amplify/ui-react'
 
 export default function ButtonAppBar() {
   const {route} = useAuthenticator((context) => [context.route]);
+  
   async function signOut() {
-   
     try {
         await Auth.signOut();
         if(route !== "authenticated"){
