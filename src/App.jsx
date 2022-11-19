@@ -1,15 +1,21 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import Box from '@mui/material/Box';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import Box from '@mui/material/Box';
 import "./App.css";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
 import LightOrDarkMode from "./components/lightOrDarkMode";
-import ButtonAppBar from './components/navbar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './pages/Home';
+import Donate from './pages/Donate';
+import Profile from './pages/Profile';
+import Dashboard from './pages/Dashboard';
+import Layout from './pages/Layout';
+import PageNotFound from './pages/PageNotFound';
+import Settings from './pages/Settings';
 import { Amplify } from 'aws-amplify';
 import { 
   Authenticator,
@@ -256,8 +262,28 @@ const formFields = {
 
 export default function App() {
   return (
-    <Authenticator formFields={formFields} components={components}>
-      {({ signOut }) => <button onClick={signOut}>Sign out</button>}
-    </Authenticator>
+    <Router>
+      <nav>
+        <Link to='/'> Home </Link>
+        <Link to='/donate'> Donate </Link>
+      </nav>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/donate' element={<Donate />} />
+
+        {/* <Authenticator formFields={formFields} components={components}>
+      {({ signOut }) => <button onClick={signOut}>Sign out</button>} */}
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/layout' element={<Layout />} />
+          <Route path='/settings' element={<Settings />} />
+        
+
+          <Route path='*' element={<PageNotFound />} />
+        {/* </Authenticator> */}
+      </Routes>
+    </Router>
+    
+    
   );
 }
