@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/SwipeableDrawer';
+import Drawer from '@mui/material/Drawer';
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from '@mui/material/Button';
+import Toolbar from "@mui/material/Toolbar";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -31,10 +32,6 @@ export default function SwipeableTemporaryDrawer({children}) {
 
     setState({ ...state, [anchor]: open });
   };
-
-  const showSideNav = () => {
-    
-  }
 
   const list = (anchor) => (
     <Box
@@ -84,7 +81,16 @@ export default function SwipeableTemporaryDrawer({children}) {
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-        <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <IconButton
+            onClick={toggleDrawer(anchor, true)}
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
