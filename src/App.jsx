@@ -1,4 +1,5 @@
 import "./App.css";
+import LightOrDarkMode from "./components/lightOrDarkMode";
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,7 +14,6 @@ import PageNotFound from './pages/PageNotFound';
 import Settings from './pages/Settings';
 import { RequireAuth } from './components/RequireAuth'
 import { Login } from './components/Login'
-
 
 import { Amplify } from 'aws-amplify';
 import { 

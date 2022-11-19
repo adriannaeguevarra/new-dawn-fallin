@@ -5,8 +5,12 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import LightOrDarkMode from "../components/lightOrDarkMode";
 import SideNav from "./SideNav"
 import {useAuthenticator} from '@aws-amplify/ui-react'
+
 
 export default function ButtonAppBar() {
   const {route} = useAuthenticator((context) => [context.route]);
@@ -34,10 +38,12 @@ export default function ButtonAppBar() {
           ></Typography>
           <Button color="inherit">Become a Sponsor</Button>
           <Button color="inherit">About</Button>
+          <Button color="inherit">{<LightOrDarkMode />}</Button>
           <Button 
           onClick = {signOut}
           color="inherit"
           >Logout</Button>
+
         </Toolbar>
       </AppBar>
     </Box>
