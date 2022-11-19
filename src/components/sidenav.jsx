@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/SwipeableDrawer';
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -13,10 +15,26 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PaidIcon from '@mui/icons-material/Paid';
 
-export default function SwipeableTemporaryDrawer() {
+export default function SwipeableTemporaryDrawer({children}) {
   const [state, setState] = React.useState({
     left: false,
   });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const showSideNav = () => {
+    
+  }
 
   const list = (anchor) => (
     <Box
@@ -59,10 +77,14 @@ export default function SwipeableTemporaryDrawer() {
     </Box>
   );
 
+  // onclick from child 
+  // parent listens to child click
+  // parent executes toggleDrawer
   return (
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
+        <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}

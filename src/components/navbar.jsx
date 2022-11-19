@@ -6,36 +6,16 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import SwipeableTemporaryDrawer from "./sidenav";
+import SideNav from "./SideNav"
+import SwipeableTemporaryDrawer from "./SideNav";
 
 export default function ButtonAppBar() {
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar>
         <Toolbar style={{ backgroundColor: "#575741" }}>
-          <IconButton
-            onClick={() => {toggleDrawer(anchor, true)}}
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <SideNav></SideNav>
+
           <Typography
             variant="h6"
             component="div"
