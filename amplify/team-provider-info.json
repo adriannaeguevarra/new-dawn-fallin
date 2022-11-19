@@ -20,6 +20,16 @@
       },
       "auth": {
         "newdawnfallinb4b2fda2": {}
+      },
+      "storage": {
+        "newdawnfallind94544b4": {
+          "bucketName": "new-dawn-users",
+          "region": "us-west-2"
+        },
+        "newdawnfallin950898f0": {
+          "bucketName": "new-dawn-users",
+          "region": "us-west-2"
+        }
       }
     }
   },

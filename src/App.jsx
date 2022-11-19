@@ -31,6 +31,7 @@ import '@aws-amplify/ui-react/styles.css';
 import SwipeableTemporaryDrawer from './components/sidenav';  
 
 import awsExports from './aws-exports';
+import FileUpload from './components/fileUpload';
 Amplify.configure(awsExports);
 
 const components = {
@@ -277,7 +278,7 @@ export default function App() {
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/layout' element={<Layout />} />
           <Route path='/settings' element={<Settings />} />
-        
+            <Route path='/fileupload' element={<FileUpload />} />
 
           <Route path='*' element={<PageNotFound />} />
         {/* </Authenticator> */}

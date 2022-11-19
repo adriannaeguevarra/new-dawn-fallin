@@ -48,5 +48,13 @@
         ]
       }
     }
+  },
+  "storage": {
+    "newdawnfallin950898f0": {
+      "service": "S3",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }
