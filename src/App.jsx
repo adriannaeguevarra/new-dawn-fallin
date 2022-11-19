@@ -11,13 +11,10 @@ import "./App.css";
 import ButtonAppBar from "./components/navbar";
 import SwipeableTemporaryDrawer from "./components/sidenav";
 import FileUpload from "./components/fileUpload";
+import LightOrDarkMode from "./components/lightOrDarkMode";
 
 function App() {
-  return (
-    <div>
-      <FileUpload />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
