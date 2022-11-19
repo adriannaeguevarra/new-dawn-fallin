@@ -1,8 +1,13 @@
 import React from 'react'
+import ButtonAppBar from '../components/NavBar'
+import SwipeableTemporaryDrawer from '../components/SideNav'
+
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      <ButtonAppBar />
+    </div>
   )
 }
 
