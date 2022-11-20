@@ -44,14 +44,19 @@ const VetForm = () => {
   //       });
   //     }
   //   });
-  const [value, setValue] = React.useState("Controlled");
+  
 
     const handleChange = (e) => {
         
         setFormData({ ...formData, [e.target.name]: e.target.value });
         console.log(formData);
     // setValue(event.target.value);
-  };
+    };
+    const handleSubmit = e => {
+        e.preventDefault();
+        //send formData to database wih GraphQL
+
+    }
 
     return (
         <Box
@@ -151,7 +156,7 @@ const VetForm = () => {
             </div>
             <div>
                 <Button
-                    onClick={() => { }}
+                    onClick={handleSubmit}
                 >Done
                 </Button>
                 {/* <TextField

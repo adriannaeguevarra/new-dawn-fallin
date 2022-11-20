@@ -81,8 +81,8 @@ export default function FileUpload({userType, userId}) {
             </Button>
             <div>
                 {uploaded
-                    ? <div>Your image is uploaded!</div>
-                    : <div>Upload a photo to get started </div>}
+                    ? <div>Your files are uploaded!</div>
+                    : <div>Upload files to get started </div>}
             </div>
         </div>
     )
