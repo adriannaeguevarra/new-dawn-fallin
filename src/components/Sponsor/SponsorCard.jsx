@@ -9,10 +9,13 @@ import DialogTitle from "@mui/material/DialogTitle";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import FileUpload from "../fileUpload";
+import SponsorForm from "./SponsorForm";
 
 const SponsorCard = () => {
   const [open, setOpen] = React.useState(false);
-
+    const [isUploading, setIsUploading] = React.useState(false);
+    const [isEdit, setIsEdit] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -65,8 +68,14 @@ const SponsorCard = () => {
               Stand Downs nationally. Comfort Kits can include items such as
               blankets, toiletries and clothing.
             </DialogContentText>
-          </DialogContent>
-          <DialogActions>
+                  </DialogContent>
+                  <DialogContent>
+                        {isUploading && <FileUpload userType='sponsors'></FileUpload>}
+                          {isEdit && <SponsorForm></SponsorForm>}
+                      </DialogContent>
+                  <DialogActions>
+                      <Button onClick={() => { setIsUploading(prevState => !prevState) }}>Upload Files</Button>
+                       <Button onClick={() => { setIsEdit(prevState => !prevState)}}>Edit</Button>
             <Button onClick={handleClose}>Disagree</Button>
             <Button onClick={handleClose} autoFocus>
               Agree

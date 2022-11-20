@@ -12,10 +12,13 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useAuthenticator } from "@aws-amplify/ui-react";
+import FileUpload from "../fileUpload";
+import VetForm from "./VetForm";
 
 const VetCards = () => {
   const [open, setOpen] = React.useState(false);
-
+    const [isUploading, setIsUploading] = React.useState(false);
+    const [isEdit, setIsEdit] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -36,7 +39,7 @@ const VetCards = () => {
           First Last M.
         </Typography>
         <Typography variant="body1" color="text.primary">
-          Sponsor M. LastName
+          Sponsored by M. LastName
         </Typography>
         <Typography variant="body1" color="text.secondary">
           Military Branch
@@ -66,10 +69,16 @@ const VetCards = () => {
                 fullWidth
                 variant="standard"
               />
-            </DialogContent>
+                      </DialogContent>
+                      <DialogContent>
+                        {isUploading && <FileUpload userType='veterans'></FileUpload>}
+                        {isEdit && <VetForm></VetForm>}
+                      </DialogContent>
             <DialogActions>
+                          <Button onClick={() => { setIsUploading(prevState => !prevState) }}>Upload Files</Button>
+                          <Button onClick={() => { setIsEdit(prevState => !prevState)}}>Edit</Button>
               <Button onClick={handleClose}>Cancel</Button>
-              <Button onClick={handleClose}>Subscribe</Button>
+              <Button onClick={handleClose}>Edit</Button>
             </DialogActions>
           </Dialog>
         </div>
