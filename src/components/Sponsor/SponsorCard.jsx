@@ -9,7 +9,9 @@ import DialogTitle from "@mui/material/DialogTitle";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
 
+import newDawnVeteran from "../../assets/newDawnVeteran.jpeg";
 const SponsorCard = () => {
   const [open, setOpen] = React.useState(false);
 
@@ -21,30 +23,44 @@ const SponsorCard = () => {
     setOpen(false);
   };
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
+    <Card
+      style={{
+        width: 345,
+        height: 500,
+        alignItems: "center",
+        justifyContent: "center",
+        display: "flex",
+        flexDirection: "column",
+        padding: 9,
+        marginRight: 25,
+        boxShadow: "0px 0px 10px rgba(0,0,0,0.18)",
+      }}
+    >
+      <Avatar
+        style={{
+          width: 256,
+          height: 256,
+        }}
+        src={newDawnVeteran}
+      />
+      {/* <CardMedia
         sx={{ borderRadius: "50%" }}
         component="img"
         image="https://bit.ly/3UPkw6Q"
         alt="green iguana"
-      />
+      /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          FName LName
+          Veteran: F.Name L.Name
+        </Typography>
+        <Typography variant="body2" color="text.primary">
+          Sponsor: F.Name L.Name
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          test123@gmail.com
+          Military Branch:
         </Typography>
-
-        <Typography variant="body2" color="text.primary" container spacing={2}>
-          Sponsoring #
-        </Typography>
-        <Typography
-          align="right"
-          variant="body3"
-          sx={{ color: `secondary.main` }}
-        >
-          Cases Completed
+        <Typography variant="body2" color="text.secondary">
+          Dates of Service:
         </Typography>
       </CardContent>
       <div>

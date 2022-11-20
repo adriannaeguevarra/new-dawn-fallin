@@ -13,7 +13,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import Avatar from "@mui/material/Avatar";
-import newDawnVeteran from "../../assets/newDawnVeteran.jpeg";
+import newDawnSponsor from "../../assets/newDawnSponsor.jpeg";
 
 const VetCards = () => {
   const [open, setOpen] = React.useState(false);
@@ -29,12 +29,14 @@ const VetCards = () => {
     <Card
       style={{
         width: 345,
+        height: 500,
         alignItems: "center",
         justifyContent: "center",
         display: "flex",
         flexDirection: "column",
         padding: 9,
         marginRight: 25,
+        boxShadow: "0px 0px 10px rgba(0,0,0,0.18)",
       }}
     >
       <Avatar
@@ -42,7 +44,7 @@ const VetCards = () => {
           width: 256,
           height: 256,
         }}
-        src={newDawnVeteran}
+        src={newDawnSponsor}
       />
       {/* <CardMedia
         sx={{ borderRadius: "100px", width: "70%" }}
@@ -52,16 +54,17 @@ const VetCards = () => {
       /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Veteran: First Last M.
-        </Typography>
-        <Typography variant="body1" color="text.primary">
-          Sponsor: First Last M.
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Military Branch:
+          Sponsor: F.Name L.Name
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Dates of Service:
+          test123@gmail.com
+        </Typography>
+
+        <Typography variant="body2" color="text.primary" container spacing={2}>
+          Sponsoring #
+        </Typography>
+        <Typography align="left" variant="body2" style={{ color: "black" }}>
+          Cases Completed
         </Typography>
       </CardContent>
       <CardActions>
