@@ -36,7 +36,7 @@ export default function SwipeableTemporaryDrawer({children}) {
   const list = (anchor) => (
     <Box
       role="presentation"
-      ={toggleDrawer(anchor, false)}
+      onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
@@ -74,7 +74,7 @@ export default function SwipeableTemporaryDrawer({children}) {
     </Box>
   );
 
-  //  from child 
+  // onclick from child 
   // parent listens to child click
   // parent executes toggleDrawer
   return (
@@ -82,7 +82,7 @@ export default function SwipeableTemporaryDrawer({children}) {
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <IconButton
-            ={toggleDrawer(anchor, true)}
+            onClick={toggleDrawer(anchor, true)}
             size="large"
             edge="start"
             color="inherit"
