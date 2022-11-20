@@ -12,6 +12,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useAuthenticator } from "@aws-amplify/ui-react";
+import Avatar from "@mui/material/Avatar";
+import newDawnVeteran from "../../assets/newDawnVeteran.jpeg";
 
 const VetCards = () => {
   const [open, setOpen] = React.useState(false);
@@ -24,25 +26,42 @@ const VetCards = () => {
     setOpen(false);
   };
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ borderRadius: "50%" }}
+    <Card
+      style={{
+        width: 345,
+        alignItems: "center",
+        justifyContent: "center",
+        display: "flex",
+        flexDirection: "column",
+        padding: 9,
+        marginRight: 25,
+      }}
+    >
+      <Avatar
+        style={{
+          width: 256,
+          height: 256,
+        }}
+        src={newDawnVeteran}
+      />
+      {/* <CardMedia
+        sx={{ borderRadius: "100px", width: "70%" }}
         component="img"
         image="https://bit.ly/3AvqTEd"
         alt="Veteran Profile"
-      />
+      /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          First Last M.
+          Veteran: First Last M.
         </Typography>
         <Typography variant="body1" color="text.primary">
-          Sponsor M. LastName
+          Sponsor: First Last M.
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          Military Branch
+          Military Branch:
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          1775-2010
+          Dates of Service:
         </Typography>
       </CardContent>
       <CardActions>
@@ -69,7 +88,7 @@ const VetCards = () => {
             </DialogContent>
             <DialogActions>
               <Button onClick={handleClose}>Cancel</Button>
-              <Button onClick={handleClose}>Subscribe</Button>
+              <Button onClick={handleClose}>Save</Button>
             </DialogActions>
           </Dialog>
         </div>
