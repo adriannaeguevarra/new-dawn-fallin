@@ -10,7 +10,7 @@ import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Image, View } from "@aws-amplify/ui-react";
 import HeroLayout3 from "./HeroLayout3";
 export default function HeroLayout2(props) {
-  const { overrides, ...rest } = props;
+  const { onClick, overrides, ...rest } = props;
   return (
     <View
       width="1440px"
@@ -38,6 +38,7 @@ export default function HeroLayout2(props) {
         right="0%"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src="https://images.unsplash.com/photo-1519430044529-9a9a57177865?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2510&q=80"
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <HeroLayout3
