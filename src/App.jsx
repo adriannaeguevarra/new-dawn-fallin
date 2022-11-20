@@ -21,6 +21,7 @@ import {
 import '@aws-amplify/ui-react/styles.css';
 
 import awsExports from './aws-exports';
+import FileUpload from './components/FileUpload';
 Amplify.configure(awsExports);
 
 
