@@ -3,7 +3,7 @@ import ButtonAppBar from '../components/NavBar'
 
 function Dashboard() {
   return (
-    <div>
+    <body className='w-screen l-screen'>
       <ButtonAppBar />
       <div className='text-gray-600 flex'>
         <h1>Sponsor Name</h1>
@@ -23,7 +23,7 @@ function Dashboard() {
         <p>**Limited to a total of (4) sponsorships at a time**</p>
       </div>
       
-    </div>
+    </body>
   )
 }
 
