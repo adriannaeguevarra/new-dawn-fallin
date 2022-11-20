@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 // import reactLogo from "./assets/react.svg";
 // import Box from '@mui/material/Box';
@@ -91,6 +92,7 @@ export default function App() {
           />
         </Routes>
       </Router>
+
     </Authenticator.Provider>
   );
 }
