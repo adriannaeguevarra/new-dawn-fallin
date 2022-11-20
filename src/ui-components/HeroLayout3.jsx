@@ -132,7 +132,7 @@ export default function HeroLayout3(props) {
           size="large"
           isDisabled={false}
           variation="primary"
-          children="Sponsor A Veteran"
+          children="Primary Button"
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>
