@@ -11,7 +11,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="white">
       {'Copyright © '}
-        Connect4Vets
+        {'Connect4Vets '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
