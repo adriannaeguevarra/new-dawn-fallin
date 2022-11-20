@@ -1,8 +1,11 @@
 import React from 'react'
+import ButtonAppBar from '../components/NavBar'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      <ButtonAppBar />
+    </div>
   )
 }
 
