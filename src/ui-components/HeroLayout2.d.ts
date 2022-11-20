@@ -7,7 +7,10 @@
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { ViewProps } from "@aws-amplify/ui-react";
+import { SyntheticEvent } from "react";
 export declare type HeroLayout2Props = React.PropsWithChildren<Partial<ViewProps> & {
+    onClick?: (event: SyntheticEvent) => void;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function HeroLayout2(props: HeroLayout2Props): React.ReactElement;
