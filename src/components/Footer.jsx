@@ -9,7 +9,7 @@ import Container from '@mui/material/Container';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2" color="white">
       {'Copyright © '}
         Connect4Vets
       {new Date().getFullYear()}
@@ -39,7 +39,8 @@ export default function StickyFooter() {
           py: 3,
           px: 2,
           mt: 'auto',
-          backgroundColor: "#CCCC99"
+          backgroundColor: "#CCCC99",
+          color: "white"
         }}
       >
         <Container maxWidth="sm">
