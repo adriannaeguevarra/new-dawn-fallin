@@ -1,6 +1,6 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import { Auth } from 'aws-amplify';
+import { Auth, API } from 'aws-amplify';
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -8,7 +8,6 @@ import Button from "@mui/material/Button";
 import LightOrDarkMode from "../components/lightOrDarkMode";
 import SideNav from "./SideNav"
 import {useAuthenticator} from '@aws-amplify/ui-react'
-
 
 export default function ButtonAppBar() {
   const {route} = useAuthenticator((context) => [context.route]);
