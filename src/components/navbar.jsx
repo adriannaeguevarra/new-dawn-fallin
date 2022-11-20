@@ -22,6 +22,7 @@ export default function ButtonAppBar() {
     <Image alt="Connect 4 logo" src={logo} style={{ height: "40px" }} />
   ) : (
     <MenuIcon />
+  )
   
   async function signOut() {
     try {
