@@ -15,6 +15,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PaidIcon from '@mui/icons-material/Paid';
+import { Link } from 'react-router-dom';
 
 export default function SwipeableTemporaryDrawer({children}) {
   const [state, setState] = React.useState({
@@ -41,7 +42,7 @@ export default function SwipeableTemporaryDrawer({children}) {
     >
       <List>
         {['Home', 'Dashboard'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <ListItem key={text} disablePadding button component={Link} to={text}>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <HomeIcon /> : <DashboardIcon /> }
@@ -51,7 +52,7 @@ export default function SwipeableTemporaryDrawer({children}) {
           </ListItem>
         ))}
         {['Profile', 'Donate'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <ListItem key={text} disablePadding button component={Link} to={text}>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <AccountCircleIcon /> : <PaidIcon />}
@@ -61,7 +62,7 @@ export default function SwipeableTemporaryDrawer({children}) {
           </ListItem>
         ))}
         {['Settings'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <ListItem key={text} disablePadding button component={Link} to={text}>
             <ListItemButton>
               <ListItemIcon>
                 {<SettingsIcon /> }
