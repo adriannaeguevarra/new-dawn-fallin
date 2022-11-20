@@ -30,7 +30,6 @@ export default function StickyFooter() {
 
       }}
     >
-      <CssBaseline />
       <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
       </Container>
       <Box
@@ -41,8 +40,6 @@ export default function StickyFooter() {
           px: 2,
           mt: 'auto',
           backgroundColor: "#CCCC99"
-          
-
         }}
       >
         <Container maxWidth="sm">
