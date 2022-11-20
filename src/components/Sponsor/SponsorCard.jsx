@@ -23,8 +23,8 @@ const SponsorCard = () => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
+        sx={{ borderRadius: "50%" }}
         component="img"
-        height="140"
         image="https://bit.ly/3UPkw6Q"
         alt="green iguana"
       />
