@@ -9,9 +9,15 @@ const SponsorForm = () => {
     lastName: "",
     email: "",
     profilePicture: "",
-    sponored: "",
+    sponsored: '',
     caseCompleted: "",
   });
+    const handleChange = (e) => {
+        
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+        console.log(formData);
+    // setValue(event.target.value);
+    };
 
   return (
     <Box
@@ -27,13 +33,17 @@ const SponsorForm = () => {
           label="First Name"
           id="standard-size-normal"
           defaultValue=""
-          variant="standard"
+                  variant="standard"
+                  name="firstName"
+                  onChange={handleChange}
         />
         <TextField
           label="Last Name"
           id="standard-size-normal"
           defaultValue=""
-          variant="standard"
+                  variant="standard"
+                   name="lastName"
+                  onChange={handleChange}
         />
       </div>
       <div>
@@ -41,21 +51,19 @@ const SponsorForm = () => {
           label="Email"
           id="standard-size-normal"
           defaultValue=""
-          variant="standard"
+                  variant="standard"
+                   name="email"
+                  onChange={handleChange}
         />
-        <TextField
-          label="Profile Picture"
-          id="standard-size-normal"
-          defaultValue=""
-          variant="standard"
-        />
+        
       </div>
       <div>
         <TextField
           label="Sponsors"
           id="standard-size-normal"
           defaultValue=""
-          variant="standard"
+                  variant="standard"
+                  name="sponsored"
         />
         <TextField
           label="Case Completed"

@@ -1,63 +1,95 @@
-import React , { useState}  from "react";
+import React , { useEffect, useState}  from "react";
 import Button from "@mui/material/Button";
-import { Storage } from 'aws-amplify';
+import { Auth, Storage } from 'aws-amplify';
 import { Select } from "@mui/material";
 
-export default function FileUpload({userType, userId}) {
-    const [file, setFile] = useState();
-    const [uploaded, setUploaded] = useState(false);
-    
-    const veteranNumber = 'veteran1'
-    //there are 4 veterans 
+ //there are 4 veterans 
     //userType is 'bucket', either veterans or sponsors 
     //userId is a unique Id for a 'folder' in sponsors bucket
-    return (
-        <>
-            <div>
-                <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-                <Button variant="contained" component="label" onClick={async () => {
-                    //Storage.put({foldername}/{filename}.{type}
-                    const storageResult = await Storage.put(`${userId || 'uniqueIdForS322'}}/${veteranNumber}/${file.name}`, file, {
+    
+export default function FileUpload({userType, userId}) {
+    const [uploadedfile, setUploadedFile] = useState();
+    console.log("File", uploadedfile);
+    const [uploaded, setUploaded] = useState(false);
+    const [username, setUsername] = useState();
+    useEffect(() => {
+        Auth.currentUserInfo()
+            .then(getUserInfoSuccess)
+            .catch(getUserInfoError)
+    }, [])
+
+    const getUserInfoSuccess = res => {
+        console.log(res);
+        setUsername(res.username);
+    }
+    const getUserInfoError = err => {
+        console.warn(err);
+    }
+    
+    const veteranNumber = 'veteran1'
+    const vetaranUpload = (
+        <div >
+            <input type="file" multiple onChange={(e) => setUploadedFile(e.target.files)} />
+            <Button variant="contained" component="label" onClick={async () => {
+                //Storage.put({foldername}/{filename}.{type}
+                for (const file of uploadedfile) {    
+                    Storage.put(`${userId || 'uniqueIdForS322'}}/${veteranNumber}/${file.name}`, file, {
                         level: 'public',
-                        bucket: `new-dawn-${userType || 'veterans'}`,
-                    
-                    }).then(res => Storage.get(res.key, {
-                        bucket: `new-dawn-${userType || 'veterans'}`,
-                    
-                    }))
-                        .catch(err => console.warn(err))
-                    setUploaded(true)
-                    console.log(storageResult);
-                }}>
-                    Upload File to veterans bucket
-            
-                </Button>
-            </div>
-            <hr />
+                        bucket: `new-dawn-${userType || 'veterans'}`,      
+                    }).then(res => {
+                        Storage.get(res.key, {
+                            bucket: `new-dawn-${userType || 'veterans'}`,
+                        }
+                        ).then(res => console.log(res))
+                        setUploaded(true)
+                    }
+                    ).catch(err => console.warn(err))
+                }
+                
+            }}>
+                Upload Files
+            </Button>
             <div>
-                <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-                <Button variant="contained" component="label" onClick={async () => {
-                    //Storage.put({foldername}/{filename}.{type}
-                    const storageResult = await Storage.put(`${userId || 'uniqueIdForS322'}}/${file.name}`, file, {
-                        level: 'public',
-                        bucket: `new-dawn-${userType || 'sponsors'}`,
-                    }).then(res => Storage.get(res.key, {
-                        bucket: `new-dawn-${userType || 'sponsors'}`,
-                    
-                    }))
-                        .catch(err => console.warn(err))
-                    setUploaded(true)
-                    console.log(storageResult);
-                }}>
-                    Upload File to sponsors bucket
-            
-                </Button>
-                <div>
-                    {uploaded
-                        ? <div>Your image is uploaded!</div>
-                        : <div>Upload a photo to get started </div>}
-                </div>
+                {uploaded
+                    ? <div>Your files are uploaded!</div>
+                    : <div>Upload files to get started </div>}
             </div>
-        </>
-    );
+        </div>
+    )
+    const sponsorUpload = (
+        <div>
+            <input type="file" multiple onChange={(e) => setUploadedFile(e.target.files)} />
+            <Button variant="contained" component="label" onClick={async () => {
+                //Storage.put({foldername}/{filename}.{type}
+                for (const file of uploadedfile) { 
+                    Storage.put(`${userId || 'uniqueIdForS322'}}/${veteranNumber}/${file.name}`, file, {
+                        level: 'public',
+                        bucket: `new-dawn-${userType || 'sponsors'}`,      
+                    }).then(res => {
+                        Storage.get(res.key, {
+                            bucket: `new-dawn-${userType || 'sponsors'}`,
+                        }
+                        ).then(res => console.log(res))
+                        setUploaded(true)
+                    }
+                    ).catch(err => console.warn(err))
+                }
+                
+               
+            }}>
+                Upload Files
+            </Button>
+            <div>
+                {uploaded
+                    ? <div>Your files are uploaded!</div>
+                    : <div>Upload files to get started </div>}
+            </div>
+        </div>
+    )
+   
+    if (userType === 'veterans')
+        return (vetaranUpload)
+    else if (userType === 'sponsors')
+        return (sponsorUpload)
+    
 }
