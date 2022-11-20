@@ -33,8 +33,6 @@ export default function ButtonAppBar() {
             component="div"
             sx={{ flexGrow: 1 }}
           ></Typography>
-          <Button color="inherit">Become a Sponsor</Button>
-          <Button color="inherit">About</Button>
           <Button 
           onClick = {signOut}
           color="inherit"
