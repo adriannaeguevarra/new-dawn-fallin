@@ -5,7 +5,7 @@ import { Storage } from 'aws-amplify';
 export default function FileUpload() {
     const [file, setFile] = useState();
     const [uploaded, setUploaded] = useState(false);
-
+    
     return (
         <div>
             <input type="file"  onChange={(e) => setFile(e.target.files[0])}/>
@@ -13,8 +13,11 @@ export default function FileUpload() {
                 //Storage.put({foldername}/{filename}.{type}
                 const storageResult = await Storage.put('test/puppy.png', file, {
                     level: 'public',
-                    type: 'image/png'
-                }).then(res => Storage.get(res.key))
+                    type: 'image/png',
+                    bucket: 'new-dawn-veterans'
+                }).then(res => Storage.get(res.key, {
+                    bucket: 'new-dawn-veterans'
+                }))
                 .catch(err => console.warn(err))
                 setUploaded(true)
                 console.log(storageResult);
