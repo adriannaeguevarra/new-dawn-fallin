@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import LightOrDarkMode from "../components/lightOrDarkMode";
+import LightOrDarkMode from "./LightOrDarkMode";
 import SideNav from "./SideNav"
 import {useAuthenticator} from '@aws-amplify/ui-react'
 
@@ -34,7 +34,7 @@ export default function ButtonAppBar() {
             sx={{ flexGrow: 1 }}
           ></Typography>
           <Button color="inherit">Become a Sponsor</Button>
-          <Button color="inherit">About</Button>
+          <Button color="inherit">FAQs</Button>
           <Button 
           onClick = {signOut}
           color="inherit"
