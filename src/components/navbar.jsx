@@ -6,8 +6,20 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Image } from "@aws-amplify/ui-react";
+import logo from "../assets/logo.png";
+import { BrowserRouter as Route } from "react-router-dom";
+import LoginPage from "../pages/LoginPage";
 
 export default function ButtonAppBar() {
+  const loginRoute = <Route path="/login" element={<LoginPage />}></Route>;
+
+  const showMenuIcon = loginRoute ? (
+    <Image alt="Connect 4 logo" src={logo} style={{ height: "40px" }} />
+  ) : (
+    <MenuIcon />
+  );
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar>
@@ -19,7 +31,7 @@ export default function ButtonAppBar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            {showMenuIcon}
           </IconButton>
           <Typography
             variant="h6"
@@ -27,8 +39,10 @@ export default function ButtonAppBar() {
             sx={{ flexGrow: 1 }}
           ></Typography>
           <Button color="inherit">Become a Sponsor</Button>
-          <Button color="inherit">About</Button>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">Donate</Button>
+          <Button href="/login" color="inherit">
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
