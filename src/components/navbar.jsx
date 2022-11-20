@@ -9,6 +9,7 @@ import LightOrDarkMode from "../components/lightOrDarkMode";
 import SideNav from "./SideNav"
 import {useAuthenticator} from '@aws-amplify/ui-react'
 
+
 export default function ButtonAppBar() {
   const {route} = useAuthenticator((context) => [context.route]);
   
