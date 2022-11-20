@@ -20,6 +20,12 @@
       },
       "auth": {
         "newdawnfallinb4b2fda2": {}
+      },
+      "storage": {
+        "newdawnfallind84e1dca": {
+          "bucketName": "new-dawn-veterans",
+          "region": "us-west-2"
+        }
       }
     }
   },
