@@ -1,6 +1,6 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import { Auth } from 'aws-amplify';
+import { Auth, API } from 'aws-amplify';
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -34,14 +34,11 @@ export default function ButtonAppBar() {
             component="div"
             sx={{ flexGrow: 1 }}
           ></Typography>
-          <Button color="inherit">Become a Sponsor</Button>
-          <Button color="inherit">About</Button>
           <Button 
           onClick = {signOut}
           color="inherit"
           >Logout</Button>
           <LightOrDarkMode />
-
         </Toolbar>
       </AppBar>
     </Box>

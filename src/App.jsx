@@ -1,4 +1,3 @@
-import "./App.css";
 import LightOrDarkMode from "./components/lightOrDarkMode";
 import {
   BrowserRouter as Router,
@@ -22,6 +21,7 @@ import {
 import '@aws-amplify/ui-react/styles.css';
 
 import awsExports from './aws-exports';
+import FileUpload from './components/FileUpload';
 Amplify.configure(awsExports);
 
 
@@ -34,8 +34,8 @@ export default function App() {
         <Link to='/donate'> Donate </Link>
       </nav> */}
       <Routes>
-          <Route path='/home' element={<Home />} />
-          <Route path='/' element={<RequireAuth><Dashboard /></RequireAuth>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} />
           <Route path='/donate' element={<RequireAuth><Donate /></RequireAuth>} />
           <Route path='/profile' element={<RequireAuth><Profile /></RequireAuth>} />
           <Route path='/layout' element={<RequireAuth><Layout /></RequireAuth>} />

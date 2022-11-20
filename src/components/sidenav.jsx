@@ -3,23 +3,21 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import Button from '@mui/material/Button';
-import Toolbar from "@mui/material/Toolbar";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
-import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PaidIcon from '@mui/icons-material/Paid';
+import { useNavigate } from 'react-router-dom'
 
 export default function SwipeableTemporaryDrawer({children}) {
   const [state, setState] = React.useState({
     left: false,
   });
+
+  const navigate = useNavigate();
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -40,27 +38,28 @@ export default function SwipeableTemporaryDrawer({children}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'Dashboard'].map((text, index) => (
+        {['Home'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <HomeIcon /> : <DashboardIcon /> }
+            <ListItemButton onClick={() => navigate('/dashboard')} >
+              <ListItemIcon >
+                <HomeIcon /> 
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
-        {['Profile', 'Donate'].map((text, index) => (
+        {['Profile'].map((text) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate('/profile')}>
               <ListItemIcon>
-                {index % 2 === 0 ? <AccountCircleIcon /> : <PaidIcon />}
+                <AccountCircleIcon /> 
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
-        {['Settings'].map((text, index) => (
+        {/* TODO: Nice To Have Settings But Not Mandatory for MVP */}
+        {/* {['Settings'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -69,7 +68,7 @@ export default function SwipeableTemporaryDrawer({children}) {
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
-        ))}
+        ))} */}
       </List>
     </Box>
   );

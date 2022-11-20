@@ -7,10 +7,13 @@ import {
   View,
   Text,
   Heading,
-  Button
+  Button,
+  Grid
  } from "@aws-amplify/ui-react";
 import {useNavigate, useLocation} from "react-router"
 import "@aws-amplify/ui-react/styles.css";
+import Paper from "@mui/material/Paper";
+import homelessPleaseHelp from "../assets/homelessPleaseHelp.jpeg";
 
 
 export function Login(){
@@ -27,7 +30,7 @@ export function Login(){
     */
 
     //use this state to look at the last place a user was at
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/dashboard";
 
     useEffect(() => {
         // logs last place user was out if they were on of the protected routes otherwise go to root
@@ -265,8 +268,31 @@ export function Login(){
       
 
     return (
-        <Authenticator formFields={formFields} components={components}>
-        </Authenticator>
+      <>
+       <Paper
+         sx={{
+           backgroundImage: `url(${homelessPleaseHelp})`,
+           backgroundSize: "cover",
+           height: "100vh",
+           weight: "100vw",
+           overflow: "hidden",
+         }}
+       >
+         <Grid
+           item
+           xs={12}
+           paddingTop="130px"
+           paddingRight="15%"
+           container
+           justifyContent="flex-end"
+         >
+           <Authenticator
+             formFields={formFields}
+             components={components}
+           ></Authenticator>
+         </Grid>
+       </Paper>
+     </>
     )
     
 }
