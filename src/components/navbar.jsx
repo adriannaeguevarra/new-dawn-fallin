@@ -39,7 +39,6 @@ export default function ButtonAppBar() {
           color="inherit"
           >Logout</Button>
           <LightOrDarkMode />
-
         </Toolbar>
       </AppBar>
     </Box>

@@ -10,7 +10,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import PaidIcon from '@mui/icons-material/Paid';
 import { useNavigate } from 'react-router-dom'
 
 export default function SwipeableTemporaryDrawer({children}) {
