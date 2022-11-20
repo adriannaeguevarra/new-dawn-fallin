@@ -1,4 +1,3 @@
-import "./App.css";
 import LightOrDarkMode from "./components/lightOrDarkMode";
 import {
   BrowserRouter as Router,
