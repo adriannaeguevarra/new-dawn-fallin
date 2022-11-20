@@ -27,7 +27,7 @@ export function Login(){
     */
 
     //use this state to look at the last place a user was at
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/dashboard";
 
     useEffect(() => {
         // logs last place user was out if they were on of the protected routes otherwise go to root
