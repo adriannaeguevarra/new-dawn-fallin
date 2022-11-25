@@ -10,6 +10,7 @@ import SideNav from "./SideNav";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import Avatar from "@mui/material/Avatar";
 import newDawnSponsor from "../assets/newDawnSponsor.jpeg";
+import { Link } from "react-router-dom";
 
 export default function ButtonAppBar() {
   const { route } = useAuthenticator((context) => [context.route]);
@@ -41,6 +42,9 @@ export default function ButtonAppBar() {
             }}
             src={newDawnSponsor}
           />
+           <Button color="inherit">
+            <Link to="/resources">Resources</Link>
+          </Button>
           <Button onClick={signOut} color="inherit">
             Logout
           </Button>

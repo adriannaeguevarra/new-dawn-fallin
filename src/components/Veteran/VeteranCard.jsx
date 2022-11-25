@@ -63,7 +63,7 @@ const VetCards = () => {
           test123@gmail.com
         </Typography>
 
-        <Typography variant="body2" color="text.primary" container spacing={2}>
+        <Typography variant="body2" color="text.primary" nspacing={2}>
           Sponsoring #
         </Typography>
         <Typography align="left" variant="body2" style={{ color: "black" }}>
@@ -93,7 +93,7 @@ const VetCards = () => {
               />
                       </DialogContent>
                       <DialogContent>
-                        {isUploading && <FileUpload userType='veterans'></FileUpload>}
+                        {isUploading && <FileUpload userType='sponsors'></FileUpload>}
                         {isEdit && <VetForm></VetForm>}
                       </DialogContent>
             <DialogActions>

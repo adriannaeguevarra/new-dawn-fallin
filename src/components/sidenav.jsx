@@ -11,6 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
+import WebStoriesIcon from '@mui/icons-material/WebStories';
 import newDawnSponsor from "../assets/newDawnSponsor.jpeg";
 
 export default function SwipeableTemporaryDrawer({ children }) {
@@ -60,6 +61,16 @@ export default function SwipeableTemporaryDrawer({ children }) {
                   }}
                   src={newDawnSponsor}
                 />
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+        {['Resources'].map((text) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton onClick={() => navigate('/resources')}>
+              <ListItemIcon>
+                <WebStoriesIcon /> 
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>

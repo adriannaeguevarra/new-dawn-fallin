@@ -86,13 +86,13 @@ const SponsorCard = () => {
             </DialogContentText>
                   </DialogContent>
                   <DialogContent>
-                        {isUploading && <FileUpload userType='sponsors'></FileUpload>}
+                        {isUploading && <FileUpload userType='veterans'></FileUpload>}
                           {isEdit && <SponsorForm></SponsorForm>}
                       </DialogContent>
                   <DialogActions>
                       <Button onClick={() => { setIsUploading(prevState => !prevState) }}>Upload Files</Button>
                        <Button onClick={() => { setIsEdit(prevState => !prevState)}}>Edit</Button>
-            <Button onClick={handleClose}>Disagree</Button>
+            <Button onClick={handleClose}>Cancel</Button>
             <Button onClick={handleClose} autoFocus>
               Agree
             </Button>

@@ -5,9 +5,9 @@ import { Select } from "@mui/material";
 
  //there are 4 veterans 
     //userType is 'bucket', either veterans or sponsors 
-    //userId is a unique Id for a 'folder' in sponsors bucket
+    //username is a unique Id for a 'folder' in sponsors bucket
     
-export default function FileUpload({userType, userId}) {
+export default function FileUpload({userType}) {
     const [uploadedfile, setUploadedFile] = useState();
     console.log("File", uploadedfile);
     const [uploaded, setUploaded] = useState(false);
@@ -33,7 +33,7 @@ export default function FileUpload({userType, userId}) {
             <Button variant="contained" component="label" onClick={async () => {
                 //Storage.put({foldername}/{filename}.{type}
                 for (const file of uploadedfile) {    
-                    Storage.put(`${userId || 'uniqueIdForS322'}}/${veteranNumber}/${file.name}`, file, {
+                    Storage.put(`${username || 'uniqueIdForS322'}}/${veteranNumber}/${file.name}`, file, {
                         level: 'public',
                         bucket: `new-dawn-${userType || 'veterans'}`,      
                     }).then(res => {
@@ -62,7 +62,7 @@ export default function FileUpload({userType, userId}) {
             <Button variant="contained" component="label" onClick={async () => {
                 //Storage.put({foldername}/{filename}.{type}
                 for (const file of uploadedfile) { 
-                    Storage.put(`${userId || 'uniqueIdForS322'}}/${veteranNumber}/${file.name}`, file, {
+                    Storage.put(`${username || 'uniqueIdForS322'}}/${veteranNumber}/${file.name}`, file, {
                         level: 'public',
                         bucket: `new-dawn-${userType || 'sponsors'}`,      
                     }).then(res => {

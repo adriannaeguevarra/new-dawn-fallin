@@ -8,7 +8,7 @@ function Dashboard() {
   return (
     <div>
       <ButtonAppBar />
-      <div class="flex h-screen justify-center items-center">
+      <div className="flex h-screen justify-center items-center">
         <VeteranCard />
         <SponsorCard />
         <StickyFooter />

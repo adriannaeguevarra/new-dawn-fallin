@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import Dashboard from './pages/Dashboard';
 import Layout from './pages/Layout';
 import PageNotFound from './pages/PageNotFound';
+import Resources from './pages/Resources'
 import Settings from './pages/Settings';
 import { RequireAuth } from './components/RequireAuth'
 import { Login } from './components/Login'
@@ -41,6 +42,7 @@ export default function App() {
           <Route path='/layout' element={<RequireAuth><Layout /></RequireAuth>} />
           <Route path='/settings' element={<RequireAuth><Settings /></RequireAuth>} />
           <Route path='/login' element={<Login></Login>}></Route>
+          <Route path='/resources' element={<RequireAuth><Resources></Resources></RequireAuth>}></Route>
           <Route path='*' element={<RequireAuth><PageNotFound /></RequireAuth>} />
       </Routes>
     </Router>

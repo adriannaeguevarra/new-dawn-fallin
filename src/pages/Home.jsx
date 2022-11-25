@@ -14,7 +14,7 @@ function Home() {
           Fight for those who fought for you
         </h3>
         <p className="text-gray-200 font-bold font-mono mb-8 drop-shadow-xl">
-          We aim to fight the homeless veterans crisis through the power over community sponsorship
+          We aim to fight the homeless veterans crisis through the power of community sponsorship
         </p>
 
         <button onClick={() => navigate('/login')} className="bg-white font-bold rounded-full py-4 px-8 drop-shadow-xl uppercase tracking-wider hover:bg-stone-700 hover:text-white font-mono">
@@ -27,3 +27,6 @@ function Home() {
 }
 
 export default Home;
+
+
+

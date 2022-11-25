@@ -14,7 +14,8 @@ import {useNavigate, useLocation} from "react-router"
 import "@aws-amplify/ui-react/styles.css";
 import Paper from "@mui/material/Paper";
 import homelessPleaseHelp from "../assets/homelessPleaseHelp.jpeg";
-
+// import { API } from 'aws-amplify';
+// import * as mutations from './graphql/mutations';
 
 export function Login(){
     const {route} = useAuthenticator((context) => [context.route])
@@ -279,11 +280,11 @@ export function Login(){
          }}
        >
          <Grid
-           item
+           item="true"
            xs={12}
            paddingTop="130px"
            paddingRight="15%"
-           container
+           container="autoColumns"
            justifyContent="flex-end"
          >
            <Authenticator

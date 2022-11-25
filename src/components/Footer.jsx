@@ -45,7 +45,7 @@ export default function StickyFooter() {
       >
         <Container maxWidth="sm">
           <Typography variant="body1">
-            Connect4Vets - It's Time To Bring 'em Home
+            Connect4Vets - Fighting for those who fought for you
           </Typography>
           <Copyright />
         </Container>
